@@ -1,0 +1,5 @@
+# 核心依赖 - 内容改写和Twitter发布
+openai==0.28.1
+python-dotenv==1.0.0
+tweepy>=4.14.0
+requests==2.31.0
