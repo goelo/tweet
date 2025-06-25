@@ -174,10 +174,17 @@ class ContentGenerator:
         Returns:
             保存的文件路径
         """
+        # 创建时间戳文件夹
+        timestamp = datetime.now().strftime("%m%d%H%M")
+        timestamp_dir = os.path.join(self.config.output_dir, timestamp)
+        
+        # 确保时间戳目录存在
+        os.makedirs(timestamp_dir, exist_ok=True)
+        
         # 安全文件名处理
         safe_filename = topic[:30].replace('？', '').replace('?', '').replace(' ', '_')
         filename = f"{safe_filename}.txt"
-        filepath = os.path.join(self.config.output_dir, filename)
+        filepath = os.path.join(timestamp_dir, filename)
         
         try:
             with open(filepath, 'w', encoding='utf-8') as f:

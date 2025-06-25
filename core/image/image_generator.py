@@ -104,7 +104,7 @@ class ImageGenerator:
         title = topic.get('title', '')
         summary = topic.get('summary', '')
         keywords = topic.get('keywords', '')
-        
+
         # 生成主标题（简化并突出重点）
         main_title = title
         if len(title) > 15:

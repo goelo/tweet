@@ -137,31 +137,20 @@ AI配图风格内卷，封面风格抄袭成爆款捷径
 3. 第5-6条：指出常见误区  
 4. 第7条：总结建议，鼓励收藏或评论
 
-## 提示词说明
+## 提示词配置
 
-### Thread 生成提示词
-```
-请以「{topic}」为主题，写一条7条结构的中文X（Twitter）thread。
+### 修改提示词
+可以在 `creation/content_generator.py` 文件中修改以下提示词模板：
 
-结构要求：
-1. 第1条是钩子，带有反常识洞察；
-2. 第2-4条拆解真实路径或案例；
-3. 第5-6条指出常见误区；
-4. 第7条是一句总结建议，鼓励收藏或评论。
+- **Thread 生成提示词**: 修改 `thread_prompt_template` 变量
+- **标题生成提示词**: 修改 `title_prompt_template` 变量
+- **图片生成提示词**: 修改 `build_image_prompt` 方法
 
-风格要求：
-- 不喊口号，不空谈方法论，语言具体有画面感；
-- 适度讽刺、冷静现实；
-- 每条 140~220 字，用短句断行；
-```
-
-### 图片生成提示词
-```
-Black background, large bold yellow Chinese text: '{主标题}'.
-Below that in smaller white font: '{副标题}'.
-Center-aligned, minimalist layout, high contrast, 16:9 aspect ratio, 
-suitable for attention-grabbing social media thumbnail.
-```
+### 自定义风格
+通过修改提示词可以调整生成内容的：
+- 结构格式（如条数、编号方式）
+- 语言风格（如正式/幽默/专业等）
+- 内容长度和复杂度
 
 ## 发布功能
 
